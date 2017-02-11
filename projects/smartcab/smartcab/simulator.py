@@ -237,7 +237,7 @@ class Simulator(object):
                 for state in a.Q:
                     f.write("{}\n".format(state))
                     for action, reward in a.Q[state].iteritems():
-                        f.write(" -- {} : {:.2f}\n".format(action, reward))
+                        f.write(" -- {} : {:.2f}\n".format(action, reward['value']))
                     f.write("\n")  
                 self.table_file.close()
 
@@ -299,7 +299,6 @@ class Simulator(object):
             else:
                 print "Agent not set to learn."
 
-                
     def render(self, trial, testing=False):
         """ This is the GUI render display of the simulation. 
             Supplementary trial data can be found from render_text. """
